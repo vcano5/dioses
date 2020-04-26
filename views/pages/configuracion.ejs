@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Configuración - Diccionario Nahuatl</title>
+	<%- include ('../partials/head.ejs') -%>
+
+</head>
+<%- include ('../partials/header.ejs') -%>
+<body class="text-light">
+	<br>
+<p class="text-light display-4 text-break" style="text-align: center; font-size: 11vw">
+				Configuración</p>
+	<div class="wrapper">
+		<div class="container">
+			<% if(texto !== "") { %>
+			<div style="display: block" class="alert alert-success" role="alert" id="falerta">
+			  <span id="alerta"></span>
+			</div>
+		<%} %>
+<div class="pb-4">
+			
+			 	
+				
+				
+	</div>
+	<div class="jumbotron bg-light text-dark">
+		<div class="d-flex justify-content-between py-5">
+		<label for="posts">Matricula: </label>
+
+				<input value="<%=matricula%>" disabled>
+				</div>
+		<form action="/configuracion" method="POST" id="publi">
+			<div class="d-flex justify-content-between">
+				<label for="posts">Entradas por consulta</label>
+				<input type="number" name="posts" id="posts" value="<%=posts%>">
+			</div>
+				<br>
+			<div class="d-flex justify-content-around pt-5">
+				<button class="btn rounded-4 btn-outline-secondary" onclick="goBack()"><span class="fa fa-undo"></span></button>
+				<% if(matricula !== "Anónimo") { %>
+					<a href="/logout" class=" mx-1 btn btn-danger"><i class="fas fa-sign-out-alt"></i> </a>
+					<a class="btn rounded-4 btn-outline-success" href="/estadisticas"><i class="fas fa-chart-bar" aria-hidden="true"> </i></a>
+				<%} else {%>
+					<a href="/login" class=" mx-1 btn btn-success"><i class="fa fa-sign-in-alt" aria-hidden="true"></i> </a>
+				<% } %>
+				<button class="mx-1 btn btn-primary" type="submit" form="publi"><i class="fas fa-paper-plane"></i> </button>
+			</div>
+		</form>
+	</div>
+	</div>
+	</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+	document.getElementById('alerta').innerHTML = decodeURI("<%=texto%>");
+	setTimeout(function() {
+		document.getElementById('falerta').style.display = "none";
+	}, 1250);
+</script>
+
+<script type="text/javascript">
+	function goBack() {
+		window.history.back()
+	}
+</script>

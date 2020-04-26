@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title><%=texto%> - Diccionario Nahuatl</title>
+	<%- include ../partials/head.ejs %>
+
+</head>
+<%- include ../partials/header.ejs %>
+<body>
+	<br>
+	<div class="wrapper">
+
+		<div class="container">
+			<p class="text-dark display-4 text-break" style="text-align: center">
+			 	
+				<%=texto%><span class="lead" style="text-align: center; border-top: 2px solid darkgray"> LETRA</span></p> 
+			<nav aria-label="Paginas">
+  		<ul class="pagination">
+  		<% letras.forEach(function(element){ %>
+  			<li class="page-item"><a class="page-link" href="/letra?letra=<%=element%>"><%=element%></a></li>
+  		<% }) %>
+  		</ul>
+	</nav>	
+	<div class="jumbotron py-2 bg-light">
+		<span class="button text-dark pb-2">Publicaciones <span class="badge badge-primary"><%=tamaño%></span></span>
+		
+	<%nahuatl.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading"><a href="/clave?c=<%=element.clave%>"><%=element.espanol%><%=element.frase%></a></h4>
+				<span class="text-muted"> <%=element.nahuatl%> por <a href="/publicaciones?matricula=<%=element.matricula%>"><%=element.matricula%></a></span>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+	</div>
+	</div>
+	</div>
+	
+</body>
+</html>

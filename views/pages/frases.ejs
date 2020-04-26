@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Frases - Diccionario Nahuatl</title>
+	<%- include ../partials/head.ejs %>
+
+</head>
+<%- include ../partials/header.ejs %>
+<body>
+	<br>
+	<div class="wrapper">
+		<div class="container">
+			<p class="text-dark display-4" style="text-align: center; font-size: 11vw">FRASES <span class="lead"><%=tamano%></span></p>
+	<%nahuatl.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body ml-sm-2" style="padding-left: 5%">
+				<h4 class="media-heading"><a href="/frase?c=<%=element.clave%>"><% if(element.verificado == "1") {%>
+  <i data-toogle="tooltip" title="Revisado por <%=element.revisadopor%>" class="fas fa-check-square" style="color:#D4AF37"></i>
+<%} %><%=element.frase%></a></h4>
+				<span> <%=element.nahuatl%><%=element.verificado%> por <a href="/publicaciones?matricula=<%=element.matricula%>"><%=element.matricula%></a></span>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+	</div>
+	</div>
+</body>
+</html>

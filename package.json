@@ -1,0 +1,25 @@
+{
+  "name": "diccionariosv5",
+  "version": "1.0.0",
+  "description": "Diccionarios VCANO5.COM mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server"
+  },
+  "author": "vcano5",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "ejs-lint": "^1.0.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "mongodb": "^3.5.5",
+    "node-base64-image": "^1.0.7",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>DIOSES GRIEGOS</title>
+	<%- include ('../partials/head.ejs') -%>
+	<meta property="og:title" content="DIOSES GRIEGOS">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://nahuatl.vcano5.com/">
+	<meta property="og:description" content="Diccionario etimologico Español-Nahuatl">
+	<meta property="og:site_name" content="VCANO5">
+	<meta property="image" content="https://atenas.sfo2.digitaloceanspaces.com/zeus.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="https://dioses.sfo2.digitaloceanspaces.com/apple-touch-icon.png?v=OmK6by3amp">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dioses.sfo2.digitaloceanspaces.com/favicon-32x32.png?v=OmK6by3amp">
+<link rel="icon" type="image/png" sizes="194x194" href="https://dioses.sfo2.digitaloceanspaces.com/favicon-194x194.png?v=OmK6by3amp">
+<link rel="icon" type="image/png" sizes="192x192" href="https://dioses.sfo2.digitaloceanspaces.com/android-chrome-192x192.png?v=OmK6by3amp">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dioses.sfo2.digitaloceanspaces.com/favicon-16x16.png?v=OmK6by3amp">
+<link rel="manifest" href="https://dioses.sfo2.digitaloceanspaces.com/site.webmanifest?v=OmK6by3amp">
+<link rel="mask-icon" href="https://dioses.sfo2.digitaloceanspaces.com/safari-pinned-tab.svg?v=OmK6by3amp" color="#ff941f">
+<link rel="shortcut icon" href="https://dioses.sfo2.digitaloceanspaces.com/favicon.ico?v=OmK6by3amp">
+<meta name="apple-mobile-web-app-title" content="DIOSES">
+<meta name="application-name" content="DIOSES">
+<meta name="msapplication-TileColor" content="#3f3f40">
+<meta name="msapplication-TileImage" content="https://dioses.sfo2.digitaloceanspaces.com/mstile-144x144.png?v=OmK6by3amp">
+<meta name="msapplication-config" content="https://dioses.sfo2.digitaloceanspaces.com/browserconfig.xml?v=OmK6by3amp">
+<meta name="theme-color" content="#3f3f40">
+
+
+</head>
+
+<body >
+
+	<!-- style="background-color: #343a40" 343a40 -->
+
+	<div class="container text-center jumbotron" id="b" style="background-color: transparent; padding-top: 7.5%">
+		<div id="contenedor-alertas" class="alert alert-danger" style="display: none;" role="alert"></div>
+
+		<img class="img-fluid" src="https://atenas.sfo2.digitaloceanspaces.com/zeus.svg" width="30%"> 
+		<h1 class="display-4 text-light">DIOSES GRIEGOS</h1>
+
+		
+		<!--
+		<div class="input-group input-group-lg vw-100 text-center">
+			<input type="search" name="busqueda" class="w-50" placeholder="Buscar un dios">
+			<button class="btn btn-primary ml-sm-2">a</button>
+		</div>
+		-->
+<div class="d-flex justify-content-around pt-2">
+		<button type="button" class="btn btn-sm btn-info my-2 mr-1" data-toggle="modal" data-target="#exampleModal" data-whatever="Tutorial" data-url="https://www.youtube.com/embed/1Z0Mw0AttMI"><i class="fas fa-chalkboard-teacher"></i> TUTORIAL</button>
+
+		<button type="button" class="btn btn-primary  btn-lg shadow-sm" onclick="location.href = '/formulario'" style="border-radius: 20%"><i class="fa fa-plus" aria-hidden="true"></i> AÑADIR</button>
+
+		<button type="button" class="btn btn-sm btn-warning my-2 ml-2" data-toggle="modal" data-target="#exampleModal" data-whatever="Clase" data-url="https://www.youtube.com/embed/vNnyfCXxTCs"><i class="fas fa-chalkboard-teacher"></i> CLASE</button>
+		</div>
+		<br>
+		
+
+		<br>
+		<button type="button" class="w-auto btn mr-sm-1 my-1  shadow-sm btn-success text-light" onclick="location.href = '/frases'" style="border-radius: 1%"><i class="fa fa-id-card" style="color: lightgray" aria-hidden="true"></i> EXPLORAR DIOSES GRIEGOS</button>
+		<br>
+		<div class="fixed-top" style="padding-top: 2%">
+			<button type="button" class="w-auto btn btn-sm btn-outline-dark my-1 mr-sm-1 shadow-sm text-light" onclick="location.href = '/registro'" style="border-radius: 30%; border: 3px solid rgba(0,0,0,0.2)"></i><span style="color: lightgray" class="fas fa-sign-in-alt"></span> REGISTRO</button>
+			
+			<button type="button" class="w-auto btn btn-sm btn-outline-dark my-1 mr-sm-1 shadow-sm text-light" onclick="location.href = '/login'" style="border-radius: 30%; border: 3px solid rgba(0,0,0,0.2)" style="color: red"><span style="color: lightgray" class="fa fa-user">  </span> INICIAR SESIÓN</button>	
+		</div>	
+	</div>
+
+	<div class="fixed-bottom text-center" style="padding-bottom: 5px; align-self:  center;">
+		<a class="p-3 m-1" href='mailto:al195352@alumnos.uacj.mx?Subject=Dudas.dioses' ><i class="fa fa-envelope" style="color: #536976" aria-hidden="true"></i> </a>
+		<a class="p-3 m-1" href='https://www.facebook.com/diosesv5' ><i class="fab fa-facebook" style="color: #536976" aria-hidden="true"></i> </a>
+		<a class="p-3 m-1" href='https://m.me/diosesv5' ><i class="fab fa-facebook-messenger" style="color: #536976" aria-hidden="true"></i> </a>
+		<a class="p-3 m-1" href='https://github.com/vcano5' ><i class="fab fa-github" style="color: #536976" aria-hidden="true"></i> </a>
+	</div>
+	
+</body>
+</html>
+
+
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">modalVcano5.com</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" allowfullscreen></iframe>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  jQuery.noConflict();
+  $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+   var urele = button.data('url')
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+ 
+  modal.find('.modal-title').text(recipient)
+  modal.find('.modal-body iframe').attr('src', urele)
+})
+</script>

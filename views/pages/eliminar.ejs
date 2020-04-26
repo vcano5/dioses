@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ('../partials/head') -%>
+</head>
+
+<header>
+    <%- include ('../partials/header') -%>
+</header>
+<body >
+
+	<div class="container yp-sm-1 align-middle" style="padding-top: 3rem">
+  <form id="form1" name="form1" method="get" action="/deleteClave">
+  <table class="table table-borderless">
+    <input type="hidden" name="op" value="del">
+  <thead>
+    <tr>
+      <th class="text-white" scope="col" colspan="4">¿Deseas eliminar la entrada '<%=palabra.Dios%>'?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <input type="hidden" name="c" value="<%=palabra.clave%>">
+    <tr>
+      <td>
+        <button type="submit" class="btn btn-danger">
+          <i class="fa fa-trash"></i> Confirmar
+        </button>
+        <a class="btn btn-primary" href="/">
+          <i class="fa fa-home"></i> Ir a Inicio
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+  </div>
+</body>
+</html>

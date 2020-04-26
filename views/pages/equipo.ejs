@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title><%=texto%> - Diccionario Dios</title>
+	<%- include ('../partials/head.ejs') %>
+
+</head>
+<%- include ('../partials/header.ejs') %>
+<body>
+	<br>
+
+	<div class="wrapper">
+
+		<div class="container">
+			<p class="text-light display-4 text-break" style="text-align: center">
+			 	
+				<%=texto%><span class="lead text-muted" style="text-align: center; border-top: 2px solid darkgray"> EQUIPO</span></p> 
+			
+	<div class="jumbotron py-2 bg-light">
+		<div class="d-flex justify-content-around">
+		<%equipos.forEach(function(e) { %>
+		<a class="badge badge-info p-3 mx-2" href="/publicaciones?matricula=<%=e.matricula%>"><%=e.nombre%><%=e.name%></a>
+		<%}) %>
+		</div>
+		<br>
+		<span class="button text-dark pb-2">Publicaciones <span class="badge badge-primary"><%=tamaño%></span></span>
+
+	<%Dios.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading"><%=element.espanol%><%=element.frase%></h4>
+				<a href="/clave?c=<%=element.clave%>"> <%=element.Dios%></a> por <a href="/publicaciones?matricula=<%=element.matricula%>"><%=element.matricula%></a>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

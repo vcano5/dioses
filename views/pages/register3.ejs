@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <% include ../partials/head %>
+  <style type="text/css">
+    body {
+        padding-top: 0.1rem;
+        padding-bottom: 0.5rem;
+    }
+.login-form
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+  </style>
+</head>
+<body style="background-color: #<%=fondo%>">
+    
+
+   
+
+    <div class="container  jumbotron" style="background-color: #<%=fondo%>">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-8">
+                 <div class="alert alert-danger container" id="alertas"><%=mensaje%></div>
+                 <div class="alert alert-success container" id="contraseña">Tu contraseña esta cifrada con HMAC_SHA256 ✔️</div>
+                <div class="card px-3">
+                    <div class="text-center">
+                    <h1 class="display-4" style="color: gray">DICCIONARIO NAHUATL</h1>
+                    <img class="img-fluid" src="https://image.flaticon.com/icons/svg/207/207127.svg" width="20%" alt="Icon made by smashicons from www.flaticon.com"> 
+                    </div>
+                    <hr style="border-color: lightgray;">
+                    
+                    <div class="card-body">
+
+                        <form action="/register" method="POST">
+                            <h2> Registro</h2>
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Nombre </label>
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control" name="name" required autofocus >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label  for="equipo" class="col-md-4 col-form-label text-md-right">Equipo</label>
+                                <div class="col-md-6">
+                                    <input id="equipo" class="form-control" name="equipo" type="text" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label  for="matricula" class="col-md-4 col-form-label text-md-right">Matricula</label>
+                                <div class="col-md-6">
+                                    <input id="matricula" class="form-control" name="matricula" type="number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" name="password" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Registrar
+                                </button>
+                                <a href="/recoverpassword" class="btn btn-link">
+                                    ¿Olvidaste tu contraseña?
+                                </a>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    </div>
+
+
+
+</body>
+</html>
+
+<% if(mensaje == "vacio") { %>
+    <script type="text/javascript">
+        document.getElementById('alertas').style.display = 'none';
+    </script>
+<% } %>

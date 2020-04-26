@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include ('../partials/head') -%>
+  <style type="text/css">
+    body {
+        padding-top: 0.1rem;
+        padding-bottom: 0.5rem;
+    }
+.login-form
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+  </style>
+</head>
+<body style="background-color: #232526">
+    
+
+   
+
+    <div class="container jumbotron my-4" style="background-color: transparent;">
+
+        <div class="row justify-content-center">
+
+            <div class="col-md-8">
+                <div class="card px-3">
+                    <div class="text-center">
+                    <h1 class="display-4" style="color: gray"> NAHUATL</h1>
+                    <img class="img-fluid" src="https://image.flaticon.com/icons/svg/207/207127.svg" width="20%" alt="Icon made by smashicons from www.flaticon.com"> 
+                    </div>
+                    <hr style="border-color: lightgray;">
+                    
+                    <div class="card-body">
+                        <form action="/olvideContrasena" method="GET" id="formulario">
+                            <h2> Olvide mi contraseña</h2>
+                            <div class="form-group row">
+                                <label for="matricula" class="col-md-4 col-form-label text-md-right">Matricula  </label>
+                                <div class="col-md-6">
+                                    <input type="number" id="matricula" class="form-control" name="matricula" required autofocus>
+                                </div>
+                            </div>
+                    </div>
+                    <button class="btn btn-secondary m-2" type="submit">
+                                    Recuperar contraseña <i class="fa fa-plane-paper" aria-hidden="true"> </i>
+                     </button>
+                    </form>
+
+                     
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    </div>
+
+
+
+</body>
+</html>

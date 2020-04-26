@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+<body>
+
+	<div class="container yp-sm-1">
+<!--<h3> Recientemente añadido: </h3> -->
+<br>
+<table>
+
+<%dioses.forEach(function(element) {%>
+<tr>
+	<td><a href="/dios?dios=<%=element.espanol%>"><img src="<%=element.imagen%>" class="media-object" style="width:90px"></a></td>
+	<td>
+		<a href="/dios?dios=<%=element.espanol%>">
+      <h5 class="media-heading text-primary">
+        <%=element.espanol%>
+      </h5>
+    </a>
+		<%=element.significado%>
+	</td>
+
+</tr>
+<tr>
+  <td></td>
+</tr>
+
+<!--<div class="container">
+  <div class="media">
+    <div class="media-left">
+      <img src="<%=element.IMAGE%>" class="media-object" style="width:90px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><a href="/dios?dios=<%=element.SPANISH%>"><%=element.SPANISH%>  </a></h4>
+      <p><%=element.DESCRIPTION%></p>
+    </div>
+  </div>
+  <hr>
+-->
+<% }) %>
+
+</table>
+</div>
+</body>
+</html>

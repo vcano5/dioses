@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+<body>
+  <div class="container"> <%if(mensaje){%>
+    <br>
+<div class="alert alert-success" role="alert">
+  <%=mensaje%>
+</div>
+<%}%>
+
+
+<br>
+<!--<table width="90%" align="center" border="1">
+  <tr>
+    <td rowspan="5"><img src="<%=dios.imagen%>" width="300px"></td>
+    <td align="right">
+      <h1><%=dios.espanol%></h1>
+      <p><%=dios.griego%></p>
+      <p><%=dios.transliteracion%></p>
+    </td>
+  </tr>
+  <tr>
+    <td>Descripcion: <%=dios.significado%></td>
+  </tr>
+  <tr>
+    <td>Aspecto historico</td>
+    <td><%=dios.aspectohistorico%></td>
+  </tr>
+  <tr>
+    <td>Aspecto evolutivo</td>
+    <td><%=dios.aspectoevolutivo%></td>
+  </tr>
+  <tr>
+    <td>Aspecto estructural</td>
+    <td><%=dios.aspectoestructural%></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Añadido por equipo <a href="/bpe?e=<%=dios.equipo%>" class="badge badge-primary"><%=dios.equipo%></a> grupo <a href="/bpg?g=<%=dios.grupo%>" class="badge badge-primary"> <%=dios.grupo%> </a></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+-->
+
+<div class="table-responsive">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col"><h1><%=dios.espanol%></h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row"><img src="<%=imagen%>" width="80%"></th>
+        <td class="align-middle">
+          <p>Griego: <%=dios.griego%></p>
+          <br>
+          <p>Transliteración: <%=dios.transliteracion%></p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"> Significado: <%=dios.significado%></td>
+      </tr>
+      <tr>
+        <th scope="row" class="align-middle">Aspecto historico</th>
+        <td class="text-break"><%=dios.aspectohistorico%></td>
+      </tr>
+      <tr>
+        <th scope="row" class="align-middle">Aspecto evolutivo</th>
+        <td class="text-break"><%=dios.aspectoevolutivo%></td>
+      </tr>
+      <tr>
+        <th scope="row" class="align-middle">Aspecto estructural</th>
+        <td class="text-break"><%=dios.aspectoestructural%></td>
+      </tr>
+      <tr>
+        <td colspan="2">Añadido por <%=dios.autor%> del equipo <a href="/busqueda?e=<%=dios.equipo%>" class="badge badge-primary"><%=dios.equipo%></a> grupo <a href="/busqueda?g=<%=dios.grupo%>" class="badge badge-primary"> <%=dios.grupo%> </a> </td>
+      </tr>
+      <tr>
+        <td> <a href="/eliminar?dios=<%=dios.id%>" class="badge badge-danger">Eliminar</a> </td>
+        <td> <a href="/modificar?id=<%=dios.id%>" class="badge badge-warning">Modificar</a> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+</html>

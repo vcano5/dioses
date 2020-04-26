@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+<body>
+
+	<div class="container yp-sm-1">
+    <br>
+<h4> Añadidos por equipo <span class="badge badge-pill badge-primary"><%= equipo %></span> </h4>
+
+<table>
+
+<%dioses.forEach(function(element) {%>
+<tr>
+	<th><a href="/dios?dios=<%=element.espanol%>"><img src="<%=element.imagen%>" class="media-object" style="width:90px"></th>
+	<th>
+		<h4 class="media-heading text-primary"><a href="/dios?dios=<%=element.espanol%>"><%=element.espanol%> </a>  </h4>
+		<p class="text-secondary"><%=element.significado%></p></a>
+	</th>
+</tr>
+
+<!--<div class="container">
+  <div class="media">
+    <div class="media-left">
+      <img src="<%=element.IMAGE%>" class="media-object" style="width:90px">
+    </div>
+    <div class="media-body mx-sm-1">
+      <h4 class="media-heading"><a href="/dios?dios=<%=element.SPANISH%>"><%=element.SPANISH%>  </a></h4>
+      <p><%=element.DESCRIPTION%></p>
+    </div>
+  </div>
+  <hr>
+-->
+<% }) %>
+
+</table>
+</div>
+</body>
+</html>

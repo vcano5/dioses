@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title><%=texto%> - Diccionario Dios</title>
+	<%- include ('../partials/head.ejs') -%>
+
+</head>
+<%- include ('../partials/header.ejs') -%>
+<body class="text-light">
+	<br>
+<p class="text-light display-4 text-break" style="text-align: center; font-size: 11vw">
+				<%=user.nombre%><%=user.name%><% if(user.esAdmin == 1) { %>
+				<span class="lead bg-danger p-2 text-light">Admin</span>
+
+			 	<%} %></p>
+	<div class="wrapper">
+
+
+		<div class="container">
+<div class="pb-4">
+			
+			 	
+				<p>Equipo: <a href="/equipo?equipo=<%=user.equipo%>"><%=user.equipo%></a></p>
+				<p>Matricula: <%=texto%></p>
+
+				<%if(matricula === true) { %>
+					<a href="/modificarPerfil"><button class="btn btn-warning"><i class="fa fa-key" aria-hidden="true"></i>
+ Modificar perfil </button></a>
+
+				<%}%>
+				
+	</div>
+	<div class="jumbotron py-2 bg-light">
+		<span class="button text-dark pb-2">Publicaciones <span class="badge badge-primary"><%=tamaño%></span></span>
+	<%Dios.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body">
+				<h4 class="media-heading text-dark"><%=element.espanol%><%=element.frase%></h4>
+				<span class="text-muted"> <a href="/clave?c=<%=element.clave%>"><%=element.Dios%></a></span>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

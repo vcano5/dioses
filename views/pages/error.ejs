@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<%- include ('../partials/head') -%>
+	<title>ERROR</title>
+</head>
+<body>
+	<div class="container text-center" style="background-color: transparent">
+		<!--- <h1 class="display-4 text-break text-light"></h1> --->
+		
+		
+		
+		
+		<div class="text-light">
+			<span class="display-4 text-break">
+				<%=texto%>
+			</span>
+			<br>
+			<img class="my-2" src="https://image.flaticon.com/icons/svg/2157/2157574.svg" width="35%">
+			<br>
+			<div id="f" style="display: none;">
+			<p class="my-4">Por favor reporta este error enviando una captura de pantalla a <a href="https://m.me/Dicc.Nahuatl"><span class="fab fa-facebook-messenger"> Diccionario Nahuatl en Messenger</span></a></p>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="fixed-bottom" style="padding-bottom: 3rem;">
+			<button class="btn btn-sm rounded-4 btn-secondary" onclick="goBack()"><span class="fa fa-undo"> REGRESAR</span></button>
+			<button class="btn btn-success btn-sm rounded-4" onclick="document.location = '/'"><span class="fa fa-home"> PAGINA PRINCIPAL</span></button>
+		</div>
+
+
+	</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+	var x = "<%= texto%>"
+	if(x == "Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado la página.") {
+		document.getElementById('f').display = "";
+	}
+	function goBack() {
+		window.history.back()
+	}
+</script>

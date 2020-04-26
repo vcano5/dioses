@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <% include ../partials/head %>
+  <style type="text/css">
+    body {
+        padding-top: 0.1rem;
+        padding-bottom: 0.5rem;
+    }
+.login-form
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+  </style>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '646931159487161',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+    
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+    
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</head>
+<body style="background-color: #343a40">
+
+   
+
+    <div class="container  jumbotron" style="background-color: #343a40" style="display:none;">
+
+        <div class="row justify-content-center" >
+
+            <div class="col-md-8">
+                <div class="card px-3">
+                    <div class="text-center">
+                    <h1 class="display-4" style="color: gray">DICCIONARIO NAHUATL</h1>
+
+                    </div>
+                    
+                    <div class="card-body">
+                     
+                    <p >Vincula tu perfil y tu cuenta de Facebook para no perder el acceso</p>
+                    <a class="btn btn-primary" data-toggle="collapse" href="#metodo1" role="button" aria-expanded="false" aria-controls="metodo1">
+    Metodo 1
+  </a>
+  <a class="btn btn-primary" data-toggle="collapse" href="#metodo2" role="button" aria-expanded="false" aria-controls="metodo2">
+    Metodo 2 <span class="badge badge-pill badge-dark text-light">RECOMENDADO</span>
+  </a>
+                    <br>
+                    <hr style="border-color: lightgray;">
+                    <br>
+                    <div class="collapse" id="metodo1">
+                      <a href="https://m.me/Dicc.Nahuatl?ref=vinculartoken">bot en Facebook Messenger <i class="fab fa-facebook-messenger"></i></a>
+                      <p>Introduce el siguiente token: <span> <%=ctoken%></span></p> 
+                    <br>
+
+                        <div class="container">
+                                    <div class="row">
+                <div class="col">
+                  <span class="text-light bg-info p-1 w-auto" style="font-size: 5rem;" id="1"></span>
+                  <span class="badge badge-info">  Letra</span>
+                </div>
+                <div class="col" style="align-content: center;">
+                  <span class="text-light bg-dark p-1 w-auto" style="font-size: 5rem;" id="2"></span>
+                  <span class="badge badge-dark ">  Numero</span>
+                </div>
+                <div class="col">
+                    <span class="text-light bg-info p-1 w-auto      " style="font-size: 5rem;" id="3"></span>
+                    <span class="badge badge-info">  Letra</span>
+                </div>
+              </div>
+            </div>
+                    </div>
+                    <div class="collapse" id="metodo2"><p>Conectar con la aplicacion automaticamente </p><a href="https://seguro.vcano5.com/login?matricula=<%=matricula%>">click aqui</a></div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a class="fixed-bottom container" href="/nunca?matricula=<%=matricula%>"><div class="p-2 m-3 text-center" style="background-color: #F32013; color: #FFFFFF">
+ <b>NO, NUNCA</b>
+</div></a>
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    </div>
+
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var token = "<%=ctoken%>"
+    document.getElementById('1').textContent = token.charAt(0)
+    document.getElementById('2').textContent = token.charAt(1,2)
+    document.getElementById('3').textContent = token.charAt(2,3)
+</script>

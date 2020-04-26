@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include ../partials/head %>
+    <meta http-equiv="refresh" content="2; url=<%=redirect%>">
+</head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+<body style="background-color: <%=tipo%>">
+  <br> <br>
+  <div class="container">
+  	<div class="jumbotron align-middle">
+  	<h1 class="display-4"><%=mensaje%></h1>
+	</div>
+  </div>
+  
+  </div>
+<script type="text/javascript">
+  setTimeout(function() {
+    window.location.replace('<%=redirect%>');
+  }, 3000)
+</script> 
+</body>
+</html>

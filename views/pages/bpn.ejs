@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <% include ../partials/head %>
+</head>
+
+<header>
+    <% include ../partials/header %>
+</header>
+<body>
+<%if(resultados.length <= 0) {%>
+  <br>
+  <div class="jumbotron" style="background-color: transparent">
+  <div class=" alert alert-danger container" role="alert">No se han encontrado resultados para la busqueda
+    <br><br>
+    <a href="/"> Regresar a la pagina principal </a></div>
+    </div>
+<%} else {%>
+	<div class="container yp-sm-1">
+<h4> Resultados para la busqueda <span class="badge badge-pill badge-primary"><%=b%></span> </h3>
+
+<table>
+
+<%dioses.forEach(function(element) {%>
+<tr>
+	<th><a href="/dios?id=<%=element.id%>"><img src="<%=element.imagen%>" class="media-object" style="width:90px"></th>
+	<th>
+		<h4 class="media-heading text-primary"><a href="/dios?id=<%=element.id%>"><%=element.espanol%> [<%=element.id%>] </a>  </h4>
+		<p class="text-secondary"><%=element.significado%></p></a>
+	</th>
+</tr>
+
+<!--<div class="container">
+  <div class="media">
+    <div class="media-left">
+      <img src="<%=element.IMAGE%>" class="media-object" style="width:90px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><a href="/dios?dios=<%=element.SPANISH%>"><%=element.SPANISH%>  </a></h4>
+      <p><%=element.DESCRIPTION%></p>
+    </div>
+  </div>
+  <hr>
+-->
+<% }) }%>
+
+</table>
+</div>
+</body>
+</html>

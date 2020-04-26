@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Modificar <%=datos.espanol%> - Diccionario Dios</title>
+    <%- include ('../partials/head') -%>
+</head>
+
+<header>
+    <%- include ('../partials/header') -%>
+</header>
+<body class="text-white">
+
+  <div class="container">
+    <br><br>
+<form id="form1" name="form1" method="get" action="/putDios">
+  <table width="95%" border="0">
+    <tr>
+      <td>Autor</td>
+      <td>
+        <input type="text" name="clave" value="<%=datos.clave%>" hidden>
+        <input type="text" name="autor" id="autor" value="<%=datos.autor%>" disabled>
+        <% if(datos.autor == "Anónimo") {%>
+        <span class="fa fa-question-circle" data-toggle="tooltip" data-placement="bottom" title="Registrate para agregar tu nombre y modificarlo posteriormente."></span> 
+        <% }%>
+      </td>
+    </tr>
+    <tr>
+      <td>Matricula: <span class="requerido"></td>
+      <td>
+        <input type="number" name="matricula" value="<%=datos.matricula%>" required>
+        </td>
+    </tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>¿Es un Dios/Diosa?</td>
+      <td>
+        <%if(datos.esdios == "on") { %>
+          <input type="checkbox" name="esdios" id="esdios" checked="on">
+        <%} else {%>
+          <input type="checkbox" name="esdios" id="esdios">
+        <% } %>
+         
+      </td>
+    </tr>
+    </tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr id="palabratr">
+      <td>Dios en Español <span class="requerido"></span></td>
+      <td colspan="2"><input type="text" name="espanol" value="<%=datos.espanol%>" id="espanol"  /></td>
+    </tr>
+    <tr>
+      <td>Dios en Griego <span class="requerido"></span></td>
+      <td colspan="2"><input type="text" value="<%=datos.Dios%>" name="Dios" id="Dios" required/></td>
+    </tr>
+    <tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr id="imagen">
+      <td>Imagen</td>
+      <td colspan="2"><input type="url" name="imagen" value="<%=datos.imagen%>" id="imagen" /></td>
+    </tr>
+    <tr>
+      <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Transliteracion:</td>
+      <td><input type="text" value="<%=datos.transliteracion%>" name="transliteracion"></td>
+    </tr>
+    <tr>
+      <td>Raiz (es)</td>
+      <td><input type="text" value="<%=datos.raiz%>" name="raiz" placeholder="Separar por coma si son varias"></td>
+    </tr>
+    <tr>
+      <td>Historia</td>
+      <td><input type="text" value="<%=datos.historia%>" name="historia"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Aspectos historicos</td>
+      <td><input type="text" value="<%=datos.historicos%>" name="historicos"></td>
+    </tr>
+    <tr>
+      <td>Aspectos Evolutivos</td>
+      <td><input type="text" value="<%=datos.evolutivos%>" name="evolutivos"></td>
+    </tr>
+    <tr>
+      <td>Origenes</td>
+      <td><input type="text" value="<%=datos.origenes%>" name="origenes"></td>
+    </tr>
+    <tr>
+      <td>Morfologia</td>
+      <td><input type="text" value="<%=datos.morfologia%>" name="morfologia"></td>
+    </tr>
+    <tr>
+      <td>Derivado</td>
+      <td><input type="text" value="<%=datos.morfemas%>" name="morfemas"></td>
+    </tr>
+    <tr>
+      <td>Semiotica</td>
+      <td><input type="text" value="<%=datos.semiotica%>" name="semiotica"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <button type="reset" class="btn btn-danger">
+          <i class="fa fa-eraser"></i> Restablecer
+        </button>
+        <!--<input class="btn btn-danger" type="reset" name="button" id="button" value="Restablecer" /> -->
+        
+
+
+        <!--<button type="submit" class="btn btn-primary">
+          <i class="fa fa-paper-plane"></i> Enviar
+        </button>
+        --->
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Enviar
+        </button>
+
+        <!--<i class="fa fa-paper-plane" aria-hidden="true"></i><input class="btn btn-primary" type="submit" name="button2" id="button2" value="Enviar">   -->
+      </div></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+  </table>
+  <div class="modal fade text-dark" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Continuar?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> ¿Desea continuar?</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-paper-plane"></i> Enviar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+<script>
+   $(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+   }) 
+   
+</script>
+
+
+
+</body>
+</html>
+
+
+<style type="text/css">
+  .requerido:after {
+    color: red;
+    content: "(*)";
+  }
+</style>

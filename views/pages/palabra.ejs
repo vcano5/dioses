@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include ('../partials/head') -%>
+      <meta property="og:title" content="<%=palabra.espanol%>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nahuatl.herokuapp.com/clave?c=<%=palabra.clave%>" />
+    <meta property="og:image" content="https://image.flaticon.com/icons/svg/207/207127.svg" />
+    <title><%= palabra.espanol%> - Diccionario Nahuatl</title>
+	<meta name="description" id="meta-desc" content="<%=palabra.historia%>">
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0"></script>
+
+<meta property="fb:app_id" content="646931159487161"/>
+
+
+</head>
+
+</head>
+
+<header>
+    <%- include ('../partials/header') -%>
+</header>
+<body>
+  <div class="container text-white"> 
+<br>
+
+
+<div class="table-responsive">
+  <table class="table table-borderless text-white">
+    <thead>
+      <tr >
+        <th scope="col" ><h1><%=palabra.espanol%><h4 class="display-4 text-white" style="font-size: 16px">PALABRA</h4></h1></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td class="align-middle">
+          <p>Nahuatl: <%=palabra.nahuatl%></p>
+          <br>
+          <p>Autor: <a href="/publicaciones?matricula=<%=palabra.matricula%>"><%=palabra.matricula%></a></p>
+        </td>
+        <% if(modificar) { %>
+      <tr>
+        <td>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Opciones">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <a href="/eliminar?c=<%=palabra.clave%>" class="btn btn-danger">Eliminar </span></a> 
+            </div>
+
+            <div class="btn-group mr-2" role="group" aria-label="Segundo group">
+
+               
+                <a href="/modificar?c=<%=palabra.clave%>" class=" btn btn-warning" id="desactivado">Modificar </a> 
+              
+            </div>
+
+            <div class="btn-group mr-2" role="group" aria-label="Tercero group">
+              <button class="btn btn-primary" onclick="toggleComments()"> Comentarios 
+                <a class="badge badge-dark"><span class="fb-comments-count"></span></a> 
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <%} else {%>
+            <tr>
+        <td>
+          <div class="btn-group btn-group-sm" role="group" aria-label="Opciones">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+
+                <a class="btn btn-secondary" ><span class="fa fa-lock"></span> Eliminar </a> 
+            </div>
+
+            <div class="btn-group mr-2" role="group" aria-label="Segundo group">
+
+                <a class="btn btn-secondary" id="desactivado"> <span class="fa fa-lock"></span> Modificar</a> 
+            </div>
+
+            <div class="btn-group mr-2" role="group" aria-label="Tercero group">
+              <button class="btn btn-primary" onclick="toggleComments()"> Comentarios 
+                <a class="badge badge-dark"><span class="fb-comments-count"></span></a> 
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <%} %>
+        <td><a data-toggle="collapse" href="#extraInfo" role="button" aria-expanded="false" aria-controls="extraInfo" href="#extraInfo"><i class="fa fa-plus" aria-hidden="true"></i> Informacion adicional
+</a></td>
+      </tr>
+    </tbody>
+
+  </table>
+  
+
+  <div class="collapse" id="extraInfo">
+<table class="table table-borderless text-white">
+      <tbody>
+        <tr>
+
+          <td class="align-middle">
+
+            <p>Transliteracion: <%=palabra.transliteracion%></p>
+            <br>
+            <p>Raiz: <%=palabra.raiz%></p>
+            <br>
+            <p>Historia: <%=palabra.historia%></p>
+            <br>
+            <p>Aspectos historicos: -<%=palabra.historicos%></p>
+            <br>
+            <p>Aspectos evolutivos: -<%=palabra.evolutivos%></p>
+            <br>
+            <p>Origenes: <%=palabra.origenes%></p>
+            <br>
+            <p>Morfologia: <%=palabra.morfologia%></p>
+            <br>
+            <p>Morfemas: <%=palabra.morfemas%></p>
+            <br>
+            <p>Semiotica: <%=palabra.semiotica%></p>
+          </td>
+  
+      </tbody>
+  </table>
+  </div>
+  <div style="background-color: #ffffff; background: #ffffff; display:none" id="ccomentarios">
+  <div class="fb-comments bg-light" style="display: none" id="comentarios" data-href="https://dioses.vcano5.com/clave?c=<%=palabra.clave%>" data-width="90%" data-numposts="5"></div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+  var b = 1;
+  function toggleComments() {
+    if(b == 0) {
+      document.getElementById('comentarios').style.display = "none";
+      document.getElementById('ccomentarios').style.display = "none";
+      b = 1;
+    }
+
+    else if(b == 1) {
+      document.getElementById('ccomentarios').style.display = "";
+      document.getElementById('comentarios').style.display = "";
+      b = 0;
+    }
+  }
+</script>
+<style type="text/css">
+  #desactivado:hover {
+    content: "Desactivado temporalmente";
+  }
+  #desactivadob:hover {
+    background-color: lightgray;
+    content: "Desactivado temporalmente"
+    border: 0px;
+  }
+</style>

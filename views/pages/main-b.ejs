@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title><%=texto%> - Diccionario Dios</title>
+	<%- include ('../partials/head.ejs') -%>
+
+
+</head>
+<%- include ('../partials/header.ejs') -%>
+<body class="text-white">
+	<br>
+
+	<div class="wrapper">
+
+		<div class="container">
+
+			<p class="display-4" style="color: lightgray; text-align: center; font-size: 11vw">
+				<%=texto%> <span class="lead"><%=tamano%></span></p>
+				<p><%=subtitulo%></p>
+				<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-end pagination-sm">
+			  	<% if(pagina > 1) {%>
+			    <li class="page-item mx-2"><a class="page-link" href="/<%=path%>?pagina=0<%=parametro%>">
+			    	Inicio
+			    </a></li>
+
+			    <li class="page-item"><a class="page-link" href="/<%=path%>?pagina=<%=pagina-2%><%=parametro%>"><%=pagina-1%></a>
+		        </li>
+
+			    <% } else {%>
+			    <li class="page-item mx-2 disabled"><a class="page-link" href="/<%=path%>?pagina=0<%=parametro%>">
+			    	Inicio
+			    </a></li>
+			    <% } %>
+			    <li class="page-item active"><a class="page-link" href="#"><%=pagina%></a></li>
+
+			    <% if((pagina) !== paginas) {%>
+			    
+			    <li class="page-item" ><a class="page-link" href="/<%=path%>?pagina=<%=pagina%><%=parametro%>"><%=pagina+1%></a></li>
+
+		        <li class="page-item mx-2"><a class="page-link" href="/<%=path%>?pagina=<%=paginas-1%><%=parametro%>">
+					    	Final
+					    </a></li>
+			    <% } else {%>
+			    <li class="page-item mx-2 disabled"><a class="page-link" href="/<%=path%>?pagina=<%=paginas-1%><%=parametro%>">
+					    	Final
+					    </a></li>
+			    <% } %>
+			  </ul>
+			</nav>
+	<%Dios.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body ml-sm-2" style="padding-left: 5%">
+				<h4 class="media-heading text-break"><a href="/clave?c=<%=element.clave%>"><%=element.espanol%><%=element.frase%></a></h4>
+				<span class="text-break"> <%=element.Dios%> por <a href="/publicaciones?matricula=<%=element.matricula%>"><%= element.matricula%></a></span>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+
+	</div>
+	</div>
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination justify-content-center">
+	  	<% if(pagina > 1) {%>
+	    <li class="page-item mx-2"><a class="page-link" href="/<%=path%>?pagina=0<%=parametro%>">
+	    	Inicio
+	    </a></li>
+
+	    <li class="page-item"><a class="page-link" href="/<%=path%>?pagina=<%=pagina-2%><%=parametro%>"><%=pagina-1%></a>
+        </li>
+
+	    <% } else {%>
+	    <li class="page-item mx-2 disabled"><a class="page-link" href="/<%=path%>?pagina=0<%=parametro%>">
+	    	Inicio
+	    </a></li>
+	    <% } %>
+	    <li class="page-item active"><a class="page-link" href="#"><%=pagina%></a></li>
+
+	    <% if((pagina) !== paginas) {%>
+	    
+	    <li class="page-item" ><a class="page-link" href="/<%=path%>?pagina=<%=pagina%><%=parametro%>"><%=pagina+1%></a></li>
+
+        <li class="page-item mx-2"><a class="page-link" href="/<%=path%>?pagina=<%=paginas-1%><%=parametro%>">
+			    	Final
+			    </a></li>
+	    <% } else {%>
+	    <li class="page-item mx-2 disabled"><a class="page-link" href="/<%=path%>?pagina=<%=paginas-1%><%=parametro%>">
+			    	Final
+			    </a></li>
+	    <% } %>
+	  </ul>
+	</nav>
+</body>
+</html>
+

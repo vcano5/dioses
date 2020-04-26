@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Duplicados - Dioses Griegos</title>
+	<%- include ('../partials/head.ejs') -%>
+
+</head>
+<%- include ('../partials/header.ejs') -%>
+<body>
+	<br>
+	<div class="wrapper">
+		<div class="container">
+			<p class="text-white display-4" style="text-align: center; font-size: 11vw">DUPLICADOS <span class="lead"><%=duplicados.length%></span></p>
+	<%duplicados.forEach(function(element){ %>
+		<div class="media">
+			<div class="media-body ml-sm-2" style="padding-left: 5%">
+				<h4 class="media-heading text-light"><span class="badge badge-primary"><%=element.count%></span> <%=element._id%></h4>
+				<% element.array.forEach(function(e) { %>
+				<a href="/clave?c=<%=e%>"><%= e %></a>
+				<br>
+				<% }) %>
+				<br>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+	</div>
+	</div>
+</body>
+</html>

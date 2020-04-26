@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <%- include ('../partials/head') -%>
+  <style type="text/css">
+    body {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+.login-form
+{
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+  </style>
+</head>
+<body style="background-color: #232526">
+    
+
+   
+
+    <div class="container py-4  jumbotron" style="background-color: transparent;">
+
+        <div class="row  align-middle justify-content-center">
+
+            <div class="col-md-8">
+                <div class="card px-3">
+                    <div class="text-center">
+                    <h1 class="display-4" style="color: gray">NAHUATL</h1>
+                    <img class="img-fluid" src="https://image.flaticon.com/icons/svg/207/207127.svg" width="20%" alt="Icon made by smashicons from www.flaticon.com">
+                    
+                    </div>
+                    <hr style="border-color: lightgray;">
+                    <h2 class="my-3">Recuperar contraseña</h2>
+                    <div class="card-body">
+                        <% if (tipo == 1) { %>
+                    <p>Recupera tu contraseña mediante Messenger  <a href="https://m.me/Dicc.Nahuatl?ref=cambiarContrasena">bot en Messenger <i class="fab fa-facebook-messenger"></i></a></p>
+                   <% } else if(tipo == 2) {%>
+                   <p>Envia un email a <a href="mailto:al195352@alumnos.uacj.mx?Subject=Recuperar%20Contraseña">al195352@alumnos.uacj.mx</a> para recuperar tu contraseña</p>
+<% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="fixed-bottom text-center" style="padding-bottom: 3rem;">
+            <button class="btn btn-secondary btn-sm rounded-4" onclick="document.location = '/'"><span class="fa fa-home"> PAGINA PRINCIPAL</span></button>
+        </div>
+    </div>
+
+    
+
+
+
+</body>
+</html>

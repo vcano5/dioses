@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title><%=texto%> - Diccionario Dios</title>
+	<%- include ('../partials/head.ejs') -%>
+
+
+</head>
+<%- include ('../partials/header.ejs') -%>
+<body class="text-white">
+	<br>
+
+	<div class="wrapper">
+
+		<div class="container">
+
+			<p class="display-4" style="color: lightgray; text-align: center; font-size: 11vw">
+				<%=texto%> <span class="lead"><%=tamano%></span></p>
+				
+	<%Dios.forEach(function(element){ %>
+		<div class="media">
+			<img src="<%=element.imagen%>" class="mr-3 align-self-center" alt="<%=element.espanol%>" style="width: 5vh">
+			<div class="media-body">
+				<h4 class="media-heading text-break mb-3"><a href="/clave?c=<%=element.clave%>"><%=element.espanol%><%=element.frase%></a></h4>
+				<%if(element.historia.length > 50) { %>
+					<p style="display: block;" width="100%" class="mb-sm-0 text-break"><%=element.historia.substring(0,50)%> ...</p>
+				<%} else {%>
+				<p style="display: block;" width="100%" class="mb-sm-0 text-break"><%=element.historia%></p>
+				<% }%>
+				<span class="text-break"> <%=element.Dios%> por <a href="/publicaciones?matricula=<%=element.matricula%>"><%= element.matricula%></a></span>
+			</div>
+		</div>
+		<br>
+	<% }) %>
+
+	</div>
+	</div>
+</body>
+</html>
+
