@@ -22,19 +22,17 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.set('view engine', 'ejs');
 
-
+/*
 	https.createServer({
 		key: fs.readFileSync('dioses.vcano5.com.key'),
 		cert: fs.readFileSync('dioses.vcano5.com.crt')
 	}, app).listen(process.env.PORT || 3002, function() {
 		console.log(process.env.PORT || 3002, " pariente")
-	})
+	})*/
 
-/*
 	app.listen((process.env.PORT || 3002), function() {
 		console.log('Puerto: ', (process.env.PORT || 3002));
 	})
-*/
 
 app.use(cookieParser());
 
