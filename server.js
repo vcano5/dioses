@@ -438,13 +438,33 @@ client.connect(function(err, client) {
 		}
 		db.collection('Dios').find({esdios: "off"}).count(function(error, resultados) {var totales = (1 +Math.floor((resultados/req.cookies.posts)));
 		sendFooter(req, function(resp) {
-			db.collection('Dios').find({esdios: "off"}).skip(resp[2]).limit(parseInt(req.cookies.posts || 50)).toArray(function(err, resu) {
+			db.collection('Dios').find({esdios: "off"}).skip(resp[2]).limit(parseInt(req.cookies.posts || 50)).sort({"espanol": 1}).toArray(function(err, resu) {
 				if(err) throw err;
 					res.render('pages/main', {Dios: resu, texto: "NO DIOSES", subtitulo: "Pagina: " + (parseInt(req.query.pagina) + 1) + " de " + totales, tamano: resultados, paginas: totales, pagina: parseInt(req.query.pagina) + 1, path: "palabras"})
 				})
 			})
 		})
 	})
+
+	/*app.get('/frases', function(req, res) {
+		if(req.query.pagina == undefined) {
+			req.query.pagina = 0;
+		}
+		//db.collection('Dios').find({espanol: ""}).toArray(function(err, resu) {
+		//	if(err) throw err;
+		//	res.render('pages/main', {Dios: resu, texto: "FRASES", subtitulo: "", tamano: resu.length})
+		//})
+		db.collection('Dios').find({}).count(function(error, resultados) {
+			var totales = parseInt((1 +Math.floor((resultados/req.cookies.posts))));
+		sendFooter(req, function(resp) {
+			db.collection('Dios').find({}).skip(resp[2]).limit(parseInt(req.cookies.posts || 50)).toArray(function(err, resu) {
+				if(err) throw err;
+					res.render('pages/main', {Dios: resu, texto: "DIOSES", subtitulo: "Pagina: " + (parseInt(req.query.pagina) + 1) + " de " + totales, tamano: resultados, paginas: totales, pagina: parseInt(req.query.pagina) + 1, path: "frases"})
+				})
+			})
+		})
+	})*/
+
 
 	app.get('/frases', function(req, res) {
 		if(req.query.pagina == undefined) {
@@ -457,7 +477,7 @@ client.connect(function(err, client) {
 		db.collection('Dios').find({}).count(function(error, resultados) {
 			var totales = (1 +Math.floor((resultados/req.cookies.posts)));
 		sendFooter(req, function(resp) {
-			db.collection('Dios').find({}).skip(resp[2]).limit(parseInt(req.cookies.posts || 50)).toArray(function(err, resu) {
+			db.collection('Dios').find({}).skip(resp[2]).limit(parseInt(req.cookies.posts || 50)).sort({"espanol": 1}).toArray(function(err, resu) {
 				if(err) throw err;
 					res.render('pages/main', {Dios: resu, texto: "DIOSES", subtitulo: "Pagina: " + (parseInt(req.query.pagina) + 1) + " de " + totales, tamano: resultados, paginas: totales, pagina: parseInt(req.query.pagina) + 1, path: "frases"})
 				})
