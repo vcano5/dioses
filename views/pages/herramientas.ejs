@@ -3,6 +3,14 @@
 <head>
 	<title>Herramientas - Diccionario Dios</title>
 	<%- include ('../partials/head.ejs') -%>
+	<style type="text/css">
+		body {
+			padding-top: 8vh;
+		}
+		.pad {
+			padding-top: 10vh;
+		}
+	</style>
 
 
 </head>
@@ -27,12 +35,12 @@
 				<input type="text" style="width: 45vw" id="esImagen">
 				<button class="btn btn-primary btn-sm ml-2" onclick="comprobarImagen()">Verificar</button>
 			</p>
-
-			<div class="fixed-bottom p-5"><h3>¿Que hago si el enlace no es una imagen?</h3>
+			<div class="pad">
+				<h3>¿Que hago si el enlace no es una imagen?</h3>
 				<p>1. Da click derecho sobre la imagen y selecciona la opcion copiar direccion de la imagen.</p>
 				<p>2. Verifica que la direccion url termine en un formato de imagen (.png, .jpg, .gif o .svg)</p>
 				<a class="py-2" style="font-size: 2vw" href="mailto:al195352@alumnos.uacj.mx?Subject=duda%20herramientas">Enviar correo electronico</a5>
-				</div>
+			</div>
 		</div>
 	</div>
 </body>
