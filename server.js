@@ -368,7 +368,9 @@ client.connect(function(err, client) {
 	app.post('/login', function(req, res) {
 		buscarUsuarios('matricula', req.body.matricula, function(resu) {
 			if(resu.length > 0) {
-				if(resu[0].contrasena == passGenerator(req.body.password)) {
+				//console.log(passGenerator(req.body.password), resu[0].password)
+				if(resu[0].password == passGenerator(req.body.password) || resu[0].contrasena == passGenerator(req.body.password)) {
+					console.log('LOGIN CORRECTO')
 					if(resu[0].fb_id !== null || resu[0].nunca !== 0) {
 						res.cookie('uuid', resu[0].uuid);
 						res.cookie('matricula', resu[0].matricula);
