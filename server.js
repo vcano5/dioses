@@ -590,7 +590,8 @@ client.connect(function(err, client) {
 
 
 	app.get('/registro', function(req, res) {
-		res.render('pages/register', {mensaje: 'vacio', })
+		res.redirect('https://nahuatl.vcano5.com/registro?sitio=dioses')
+		//res.render('pages/register', {mensaje: 'vacio', })
 	})
 
 	app.get('/login', function(req, res) {
