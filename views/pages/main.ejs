@@ -21,7 +21,7 @@
 				
 	<%Dios.forEach(function(element){ %>
 		<div class="media">
-			<img src="<%=element.imagen%>" class="mr-3 align-self-center" alt="<%=element.espanol%>"  style="width: 20vh;">
+			<img src="<%=element.imagen%>" class="mr-3 align-self-center" alt=" "  style="background-image: url('https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'); background-size: 100% auto; width: 20vh; height: 20vh">
 			<div class="media-body">
 				<h4 class="media-heading text-break mb-3"><a href="/clave?c=<%=element.clave%>"><% if(element.verificado == '1') {%>
   <i class="fas fa-check-square" style="color: peru;"> </i> 

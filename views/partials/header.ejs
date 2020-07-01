@@ -1,9 +1,9 @@
-<nav class="navbar navbar-dark fixed-top bg-dark" id="bar">
-      <a href="/" class="navbar-brand rounded-pill p-2"><img src="https://dioses.s3-us-west-2.amazonaws.com/zeus.svg" width="30"> 
-			</a>
+<nav class="navbar navbar-dark fixed-top bg-dark pb-xl-4" id="bar">
+      <a href="/"  id="nombre"  class="navbar-brand rounded-pill p-2"><img src="https://dioses.s3-us-west-2.amazonaws.com/zeus.svg" width="30"> 
+			<span class="display-4" style="font-size: 1em">DIOSES GRIEGOS</span></a>
      <form method="GET" action="/busqueda">
-     	<div class="input-group">
-		  <input type="text" class="form-control" name="n" placeholder="Dios en español">
+     	<div class="input-group" id="fbusqueda">
+		  <input type="text" style="width: 5rem" class="form-control" name="n" id="n" placeholder="Buscar" onfocusin="expandirBusqueda()" onfocusout="cerrarBusqueda()">
 		  <div class="input-group-append">
 		    <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
 		  </div>
@@ -11,6 +11,19 @@
      </form>
 </nav>
 
+<script type="text/javascript">
+	function expandirBusqueda() {
+		document.getElementById('n').style.width = "80vw"
+		document.getElementById('n').placeholder = "Buscar un dios en Español"
+		document.getElementById('nombre').style.display = "none";
+		document.getElementById('fbusqueda').style.alignContent = "center";
+	}
+	function cerrarBusqueda() {
+		document.getElementById('n').style.width = "5rem"
+		document.getElementById('n').placeholder = "Buscar"
+		document.getElementById('nombre').style.display = "";
+	}
+</script>
 
 
 <style type="text/css">
@@ -25,9 +38,9 @@
 
 
 <div class="btn-group" role="group" aria-label="final">
-			<button class="btn btn-secondary ml-1 w-auto d-flex" type="button" onclick="location.href = 'https://m.me/DiccNahuatl'"><i class="fab fa-facebook-messenger"></i> </button>
 			<button class="btn btn-secondary ml-1 w-auto d-flex" id="palabras" type="button" onclick="location.href ='/palabras'"><i class="fa fa-user" aria-hidden="true"></i></button>
 			<button class="btn btn-secondary ml-1 w-auto d-flex" id="frases" type="button"  onclick="location.href ='/frases'"><i class="fa fa-bolt" aria-hidden="true"></i></button>
+
 			<button class="btn btn-secondary ml-1 w-auto d-flex" id="mispublicaciones" type="button" onclick="location.href ='/mispublicaciones'"><i class="fa fa-archive" aria-hidden="true"></i></button>
 
 	</div>

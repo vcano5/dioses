@@ -368,9 +368,10 @@ client.connect(function(err, client) {
 	app.post('/login', function(req, res) {
 		buscarUsuarios('matricula', req.body.matricula, function(resu) {
 			if(resu.length > 0) {
+				//console.log(resu.length)
 				//console.log(passGenerator(req.body.password), resu[0].password)
 				if(resu[0].password == passGenerator(req.body.password) || resu[0].contrasena == passGenerator(req.body.password)) {
-					console.log('LOGIN CORRECTO')
+					//onsole.log('LOGIN CORRECTO')
 					if(resu[0].fb_id !== null || resu[0].nunca !== 0) {
 						res.cookie('uuid', resu[0].uuid);
 						res.cookie('matricula', resu[0].matricula);
@@ -383,6 +384,9 @@ client.connect(function(err, client) {
 				else {
 					res.render('pages/login', {mensaje: "La contraseña o matricula es incorrecta", recursos: cargarR(req.cookies.direccion)})
 				}
+			}
+			else {
+				res.render('pages/login', {mensaje: "No encontre tu cuenta :("})
 			}
 		})
 	})
@@ -888,6 +892,21 @@ client.connect(function(err, client) {
 		}
 	})
 
+	app.get('/instalarCookies', function(req, res) {
+		//res.send(req.headers)
+		if(req.query.tipo == "autentificacion") {
+			res.cookie('matricula', req.query.matricula);
+			res.cookie('posts', "");
+			res.cookie('uuid', req.query.uuid);
+			res.setHeader('Content-Type', "image/png")
+			res.sendStatus(200);
+		}
+		else {
+			res.sendStatus(403)
+		}
+		
+	})
+
 	app.get('/porrevisar', function(req, res) {
 		/*db.collection('Dios').find({espanol: ""}).toArray(function(err, resu) {
 			if(err) throw err;
@@ -901,7 +920,11 @@ client.connect(function(err, client) {
 		})
 	})
 
+
+
 	app.get('*', function(req, res) {
 		res.render('pages/error', {texto: "Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado la página."});
 	});
+
+
 })

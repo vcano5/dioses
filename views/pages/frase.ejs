@@ -33,7 +33,7 @@
 <%} %><%=palabra.espanol%></h1>
 
 <div class="media mb-5">
-  <img src="<%=palabra.imagen%>" class="mr-3" style="width: 25vw">
+  <img src="<%=palabra.imagen%>" class="mr-3" style="background-image: url('https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'); background-size: 100% auto; width: 25vw; height: 25vw" alt=" ">
   <div class="media-body">
     
           <% if(palabra.esdios == "on") { %>
@@ -131,9 +131,9 @@ $(document).ready(function(){
       </tbody>
   </table>
   </div>
-  <div style="background-color: #ffffff; background: #ffffff; margin-top: 2vh;">
-  	<div class="fb-like m-2" id="likes" style="display:none" data-href="https://dioses.vcano5.com/frase?c=<%=palabra.clave%>" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
-    <div style="display: none" class="fb-comments bg-light"  id="comentarios" data-href="https://dioses.vcano5.com/clave?c=<%=palabra.clave%>" data-width="90%" data-numposts="5"></div>
+  <div style="background-color: #ffffff; background: #ffffff; margin-top: 2vh; width: 90vw;">
+
+    <div style="width: 90vw;display: none" class="fb-comments bg-light"  id="comentarios" data-href="https://dioses.vcano5.com/clave?c=<%=palabra.clave%>" data-width="100%" data-numposts="5"></div>
   </div>
 </div>
 </div>
