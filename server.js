@@ -341,7 +341,8 @@ client.connect(function(err, client) {
 
 	app.get('/login', function(req, res) {
 		if(req.cookies.matricula == undefined) {
-			res.render('pages/login', {mensaje: ''})
+			res.redirect('https://nahuatl.vcano5.com/login?url=dioses')
+			//res.render('pages/login', {mensaje: '', url: ('nahuatl' ||)})
 		}
 		else {
 			res.redirect('/publicaciones?matricula=' + req.cookies.matricula)
