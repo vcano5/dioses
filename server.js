@@ -341,7 +341,7 @@ client.connect(function(err, client) {
 
 	app.get('/login', function(req, res) {
 		if(req.cookies.matricula == undefined) {
-			res.redirect('https://nahuatl.vcano5.com/login?url=dioses')
+			res.redirect('https://nahuatl.laspuertasdelapedagogia.com/login?url=dioses')
 			//res.render('pages/login', {mensaje: '', url: ('nahuatl' ||)})
 		}
 		else {
@@ -597,7 +597,7 @@ client.connect(function(err, client) {
 
 
 	app.get('/registro', function(req, res) {
-		res.redirect('https://nahuatl.vcano5.com/registro?sitio=dioses')
+		res.redirect('https://nahuatl.laspuertasdelapedagogia.com/registro?sitio=dioses')
 		//res.render('pages/register', {mensaje: 'vacio', })
 	})
 
